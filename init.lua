@@ -191,10 +191,14 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Basic quality of life (QOL) commands
-vim.keymap.set('n', '<leader>h', '<cmd>nohl<cr>', { desc = 'Remove highlighting' })
-vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Remove highlighting' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Remove highlighting' })
-vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Remove highlighting' })
+vim.keymap.set('n', '<leader>h', '<cmd>nohl<cr>', { desc = 'Remove [h]ighlighting' })
+
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[w]rite to file' })
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[q]uit' })
+
+vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = '[c]lose buffer' })
+vim.keymap.set('n', '<leader>[', '<cmd>bp<cr>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>]', '<cmd>bp<cr>', { desc = 'Next buffer' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
