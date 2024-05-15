@@ -198,7 +198,7 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[q]uit' })
 
 vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = '[c]lose buffer' })
 vim.keymap.set('n', '<leader>[', '<cmd>bp<cr>', { desc = 'Previous buffer' })
-vim.keymap.set('n', '<leader>]', '<cmd>bp<cr>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>]', '<cmd>bn<cr>', { desc = 'Next buffer' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
