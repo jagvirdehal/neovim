@@ -839,20 +839,27 @@ require('lazy').setup({
       end
 
       require('mini.tabline').setup()
-      require('mini.files').setup {
-        mappings = {
-          go_in_plus = '<cr>',
-          go_out_plus = '<bs>',
-          reset = '<leader>e',
-        },
-        windows = {
-          -- preview = true,
-        },
-      }
-      vim.keymap.set('n', '<leader>e', MiniFiles.open, { desc = 'Open file [e]xplorer' })
+      -- require('mini.files').setup {
+      --   mappings = {
+      --     go_in_plus = '<cr>',
+      --     go_out_plus = '<bs>',
+      --     reset = '<leader>e',
+      --   },
+      --   windows = {
+      --     -- preview = true,
+      --   },
+      -- }
+      -- vim.keymap.set('n', '<leader>e', MiniFiles.open, { desc = 'Open file [e]xplorer' })
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require("nvim-tree").setup()
+      vim.keymap.set('n', '<leader>e', '<cmd>:NvimTreeFindFileToggle<cr>', { desc = 'Open file [e]xplorer' })
+    end
   },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
