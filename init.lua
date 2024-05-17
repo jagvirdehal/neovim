@@ -839,6 +839,10 @@ require('lazy').setup({
       end
 
       require('mini.tabline').setup()
+      require('mini.sessions').setup{
+        autoread = true,
+        autowrite = true,
+      }
       -- require('mini.files').setup {
       --   mappings = {
       --     go_in_plus = '<cr>',
