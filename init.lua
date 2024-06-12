@@ -118,6 +118,10 @@ vim.opt.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Enable cindent
+vim.opt.cindent = true
+vim.opt.cinoptions = "4"
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -199,6 +203,16 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[q]uit' })
 vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = '[c]lose buffer' })
 vim.keymap.set('n', '<leader>[', '<cmd>bp<cr>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>]', '<cmd>bn<cr>', { desc = 'Next buffer' })
+
+-- Toggle current line or with count
+vim.keymap.set('n', '<C-/>', function()
+  return vim.v.count == 0
+    and '<Plug>(comment_toggle_linewise_current)'
+    or '<Plug>(comment_toggle_linewise_count)'
+end, { expr = true })
+
+-- Toggle in VISUAL mode
+vim.keymap.set('x', '<C-/>', '<Plug>(comment_toggle_linewise_visual)')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
