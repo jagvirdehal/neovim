@@ -204,6 +204,19 @@ vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = '[c]lose buffer' })
 vim.keymap.set('n', '<leader>[', '<cmd>bp<cr>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>]', '<cmd>bn<cr>', { desc = 'Next buffer' })
 
+-- nnoremap <A-j> :m .+1<CR>==
+-- nnoremap <A-k> :m .-2<CR>==
+-- inoremap <A-j> <Esc>:m .+1<CR>==gi
+-- inoremap <A-k> <Esc>:m .-2<CR>==gi
+-- vnoremap <A-j> :m '>+1<CR>gv=gv
+-- vnoremap <A-k> :m '<-2<CR>gv=gv
+vim.keymap.set('n', '<A-Down>', '<cmd>m .+1<cr>', { desc = 'Move current line down' })
+vim.keymap.set('n', '<A-Up>', '<cmd>m .-2<cr>', { desc = 'Move current line up' })
+vim.keymap.set('v', '<A-Down>', '<cmd>m \'>+1<cr>', { desc = 'Move current lines down' })
+vim.keymap.set('v', '<A-Up>', '<cmd>m \'<-2<cr>', { desc = 'Move current lines up' })
+vim.keymap.set('i', '<A-Down>', '<esc><cmd>m .+1<cr>gi', { desc = 'Move current line down' })
+vim.keymap.set('i', '<A-Up>', '<esc><cmd>m .-2<cr>gi', { desc = 'Move current line up' })
+
 -- Toggle current line or with count
 vim.keymap.set('n', '<C-/>', function()
   return vim.v.count == 0
