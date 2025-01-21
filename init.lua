@@ -644,6 +644,9 @@ require('lazy').setup({
             },
           },
         },
+        asm_lsp = {
+          cmd = {"/home/jdehal/.cargo/bin/asm-lsp"}
+        }
       }
 
       -- Ensure the servers and tools above are installed
